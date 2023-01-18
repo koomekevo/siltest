@@ -21,5 +21,5 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-undef': 'off'
   },
-  ignorePatterns: ['dist/', 'build/', 'src/.eslintrc.js']
+  ignorePatterns: ['dist/', 'build/']
 }
