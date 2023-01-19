@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -23,10 +24,14 @@ const Home = () => {
             </div>
             <div className='flex justify-center space-x-8'>
               <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-96 px-4 rounded-full'>
-                SIGN IN
+                <NavLink to='/Login' exact>
+                  SIGN IN
+                </NavLink>
               </button>
               <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-96 px-4 rounded-full'>
-                GET IN TOUCH
+                <NavLink to='/Contact' exact>
+                  GET IN TOUCH
+                </NavLink>
               </button>
             </div>
           </div>
