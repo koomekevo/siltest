@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className='flex w-full h-screen max-h-[36.5rem]'>
+      <div className='flex w-full h-screen max-h-[36.5rem] border-black border-b-2'>
         <div className='w-full flex justify-center items-center lg:w-1/2'>
           <Form />
         </div>
