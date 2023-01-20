@@ -11,14 +11,14 @@ const Form = () => {
         <div>
           <label className='text-lg font-medium'>Email</label>
           <input
-            className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1 bg-transparent'
+            className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
             placeholder='Enter your Email'
           />
         </div>
         <div>
           <label className='text-lg font-medium'>Password</label>
           <input
-            className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1 bg-transparent'
+            className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
             placeholder='Enter your Password'
           />
         </div>
