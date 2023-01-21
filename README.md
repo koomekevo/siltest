@@ -1,6 +1,6 @@
 # SILTest
 
-This repo is a test project required by Savannah Informatics Ltd.
+This repository is a test project required by Savannah Informatics Ltd.
 ## Built With
 
 - React
