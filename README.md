@@ -13,7 +13,7 @@ https://siltest.vercel.app/
 
 To get a local copy up and running follow these simple example steps.
 
-Clone the repo with `https://github.com/koomekevo/siltest.git`
+Clone the repository with `https://github.com/koomekevo/siltest.git`
 
 Run `cd siltest` to access app.
 
