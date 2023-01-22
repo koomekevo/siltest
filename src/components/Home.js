@@ -29,8 +29,8 @@ const Home = () => {
                 </NavLink>
               </button>
               <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-96 px-4 rounded-full'>
-                <NavLink to='/Contact' exact>
-                  GET IN TOUCH
+                <NavLink to='/About' exact>
+                  ABOUT US
                 </NavLink>
               </button>
             </div>
