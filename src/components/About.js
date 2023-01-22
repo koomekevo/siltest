@@ -9,10 +9,10 @@ const About = () => {
         <div className='flex justify-center items-center min-h-[80%]'>
           <div>
             <div className='flex text-6xl md:text-6xl font-bold justify-center items-center text-white'>
-              <h1>
+              <h3>
                 ABOUT US
                 <br />
-              </h1>
+              </h3>
             </div>
             <div className='text-4xl text-white text-center mt-8 text-justify mx-8'>
               <p>
