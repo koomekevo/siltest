@@ -7,15 +7,15 @@ const Home = () => {
     <>
       <div className='bg-cover bg-center bg-fixed h-screen w-full bg-[url("https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")]'>
         <Header />
-        <div className='flex justify-center items-center min-h-[80%]'>
+        <div className='md:flex justify-center items-center min-h-[80%]'>
           <div>
-            <div className='flex text-6xl md:text-6xl font-bold text-white'>
+            <div className='flex text-6xl md:text-6xl font-bold text-white text-center'>
               <p>
                 Your Ultimate Photography Directory.
                 <br />
               </p>
             </div>
-            <div className='text-4xl text-white text-center'>
+            <div className='text-4xl text-white text-center mt-4'>
               <p>
                 Manage your photo portfolio with our user friendly app.
                 <br />
