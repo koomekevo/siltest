@@ -9,7 +9,7 @@ const Home = () => {
         <Header />
         <div className='md:flex justify-center items-center min-h-[80%]'>
           <div>
-            <div className='flex text-6xl md:text-6xl font-bold text-white text-center'>
+            <div className='flex text-6xl md:text-6xl font-bold text-white text-center mt-8'>
               <p>
                 Your Ultimate Photography Directory.
                 <br />
