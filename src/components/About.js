@@ -14,11 +14,9 @@ const About = () => {
                 <br />
               </h1>
             </div>
-            <div className='text-4xl text-white text-center mt-8 text-justify'>
+            <div className='text-4xl text-white text-center mt-8 text-justify mx-8'>
               <p>
                 SILTest is an app that lets you manage your photo portfolio. It has an photo album feature that lets each user organize their memories based on special events such as weddings, graduations etc.
-                <br />
-                <br />
               </p>
             </div>
           </div>
