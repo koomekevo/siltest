@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 
-const Contact = () => {
+const About = () => {
   return (
     <div>
       <Header />
@@ -9,4 +9,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default About

@@ -2,7 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
-import Contact from './components/Contact'
+import About from './components/About'
 
 function App () {
   return (
@@ -11,7 +11,7 @@ function App () {
         <div>
           <Routes>
             <Route exact path='/' element={<Home />} />
-            <Route exact path='/contact' element={<Contact />} />
+            <Route exact path='/about' element={<About />} />
             <Route exact path='/login' element={<Login />} />
           </Routes>
         </div>
