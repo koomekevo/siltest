@@ -1,9 +1,14 @@
 import React from 'react'
 import { useGoogleLogin } from '@react-oauth/google'
+import jwt_decode from 'jwt-decode' // eslint-disable-line
 
 const Form = () => {
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse)
+    onSuccess: (tokenResponse) => {
+      console.log(tokenResponse)
+      const decoded = jwt_decode(tokenResponse)
+      console.log(decoded)
+    }
   })
 
   return (
@@ -46,7 +51,7 @@ const Form = () => {
               width='25px'
               height='25px'
             >
-              <path d="M25.004,22.006l16.025,0.022C42.427,28.656,39.87,42,25.004,42C15.613,42,8,34.389,8,25S15.613,8,25.004,8	c4.411,0,8.428,1.679,11.45,4.432l-4.785,4.783c-1.794-1.536-4.118-2.47-6.665-2.47c-5.664,0-10.256,4.591-10.256,10.254	s4.592,10.254,10.256,10.254c4.757,0,8.046-2.816,9.256-6.752h-9.256V22.006z" />{/* eslint-disable-line */}
+              <path d="M25.004,22.006l16.025,0.022C42.427,28.656,39.87,42,25.004,42C15.613,42,8,34.389,8,25S15.613,8,25.004,8	c4.411,0,8.428,1.679,11.45,4.432l-4.785,4.783c-1.794-1.536-4.118-2.47-6.665-2.47c-5.664,0-10.256,4.591-10.256,10.254	s4.592,10.254,10.256,10.254c4.757,0,8.046-2.816,9.256-6.752h-9.256V22.006z" /> {/* eslint-disable-line */}
             </svg>
             SIGN IN WITH GOOGLE
           </button>
