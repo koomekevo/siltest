@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -20,5 +20,5 @@ export const AuthContextProvider = ({ children }) => {
 }
 
 export const UserAuth = () => {
-  return UserContext(UserContext)
+  return useContext(UserContext)
 }

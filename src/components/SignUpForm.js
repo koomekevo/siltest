@@ -7,7 +7,7 @@ import { UserAuth } from '../context/AuthContext'
 const SignUpForm = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [error, setError] = useState('') /* eslint-disable no-unused-vars */
 
   const { createUser } = UserAuth()
 
