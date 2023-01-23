@@ -27,6 +27,10 @@
       "react-app/jest"
     ]
   },
+  "eslintIgnore": [
+    "firebase.js",
+    "AuthContext.js"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
