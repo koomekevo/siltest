@@ -5,19 +5,22 @@ import SignIn from './components/SignIn'
 import About from './components/About'
 import SignUp from './components/SignUp'
 import Account from './components/Account'
+import { AuthContextProvider } from './context/AuthContext'
 
 function App () {
   return (
     <Router>
       <div>
         <div>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/signin' element={<SignIn />} />
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/account' element={<Account />} />
-          </Routes>
+          <AuthContextProvider>
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/signin' element={<SignIn />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/account' element={<Account />} />
+            </Routes>
+          </AuthContextProvider>
         </div>
       </div>
     </Router>
