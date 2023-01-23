@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Form from './Form'
 
-const Login = () => {
+const SignIn = () => {
   return (
     <>
       <Header />
@@ -16,4 +16,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default SignIn

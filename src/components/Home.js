@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -24,14 +24,14 @@ const Home = () => {
             </div>
             <div className='flex justify-center space-x-8'>
               <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-96 px-4 rounded-full'>
-                <NavLink to='/Login' exact>
+                <Link to='/SignIn' exact>
                   SIGN IN
-                </NavLink>
+                </Link>
               </button>
               <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-96 px-4 rounded-full'>
-                <NavLink to='/About' exact>
+                <Link to='/About' exact>
                   ABOUT US
-                </NavLink>
+                </Link>
               </button>
             </div>
           </div>
