@@ -19,12 +19,11 @@ const SignUpForm = () => {
   const { currentUser, register, setError } = useAuth();
   const [loading, setLoading] = useState(false);
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (currentUser) {
-      navigate('/Account')
+      navigate("/Account");
     }
-  }, [currentUser, navigate])
-  */
+  }, [currentUser, navigate]);
 
   async function handleFormSubmit(e) {
     e.preventDefault();
@@ -90,7 +89,10 @@ const SignUpForm = () => {
           />
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
-          <button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold">
+          <button
+            className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold"
+            disabled={loading}
+          >
             SIGN UP
           </button>
         </div>

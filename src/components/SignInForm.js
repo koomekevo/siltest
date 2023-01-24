@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Account from "../pages/Account";
 import {
   auth,
   db,
@@ -14,13 +15,14 @@ const SignInForm = () => {
   const navigate = useNavigate();
   const { currentUser, login, setError } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (currentUser) {
       navigate('/Account')
     }
   }, [currentUser, navigate])
-  */
 
   async function handleFormSubmit(e) {
     e.preventDefault();
@@ -29,7 +31,7 @@ const SignInForm = () => {
       setError("");
       setLoading(true);
       await login(email, password);
-      navigate("/account");
+      navigate("/Account");
     } catch (e) {
       setError("Failed to Sign In");
     }
@@ -53,6 +55,7 @@ const SignInForm = () => {
             type="email"
             className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
             placeholder="Enter your Email"
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -64,15 +67,11 @@ const SignInForm = () => {
             type="password"
             className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
             placeholder="Enter your Password"
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <div className="mt-4 flex justify-between items-center">
-          <button className="font-small text-violet text-sm">
-            Forgot Password
-          </button>
-        </div>
-        <div className="mt-8 flex flex-col gap-y-4">
+        <div className="mt-6 flex flex-col gap-y-4">
           <button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold">
             SIGN IN
           </button>
@@ -93,6 +92,11 @@ const SignInForm = () => {
             {/* eslint-disable-line */}
           </svg>
           SIGN IN WITH GOOGLE
+        </button>
+      </div>
+      <div className="mt-4 flex justify-center items-center">
+        <button className="font-small text-violet text-sm">
+          Forgot Password
         </button>
       </div>
       <div className="mt-8 flex justify-center items-center">
