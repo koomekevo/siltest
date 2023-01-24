@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import ErrorMessage from "./layouts/ErrorMessage"
+import ErrorMessage from "./layouts/ErrorMessage";
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -41,6 +41,9 @@ const SignInForm = () => {
         <div>
           <label className="text-lg font-medium">Email</label>
           <input
+            id="email-address"
+            name="email"
+            type="email"
             className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
             placeholder="Enter your Email"
             required
@@ -49,6 +52,9 @@ const SignInForm = () => {
         <div>
           <label className="text-lg font-medium">Password</label>
           <input
+            id="password"
+            name="password"
+            type="password"
             className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
             placeholder="Enter your Password"
             required
