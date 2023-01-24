@@ -15,7 +15,8 @@ export function useAuth () {
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState()
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
   function register (email, password) {
     createUserWithEmailAndPassword(auth, email, password)
@@ -37,7 +38,9 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     login,
-    register
+    register,
+    error,
+    setError
   }
 
   return (
