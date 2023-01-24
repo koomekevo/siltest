@@ -1,52 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Account from "../pages/Account";
 import {
   auth,
   db,
   signInWithGoogle,
   sendPasswordReset,
-  logout,
+  signInWithEmailAndPassword,
+  loginWithEmailAndPassword,
 } from "../firebase";
-import ErrorMessage from "./layouts/ErrorMessage";
 
 const SignInForm = () => {
   const navigate = useNavigate();
-  const { currentUser, login, setError } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const { user, loading, error } = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    if (currentUser) {
-      navigate('/Account')
-    }
-  }, [currentUser, navigate])
-
-  async function handleFormSubmit(e) {
-    e.preventDefault();
-
-    try {
-      setError("");
-      setLoading(true);
-      await login(email, password);
+    if (user) {
       navigate("/Account");
-    } catch (e) {
-      setError("Failed to Sign In");
     }
-
-    setLoading(false);
-  }
+  }, [user, loading]);
 
   return (
     <div className="bg-white px-5 py-10 rounded-3xl border-2 border-gray-100">
-      <ErrorMessage />
       <h1 className="text-3xl font-semibold">Sign In</h1>
       <p className="font-medium text-lg text-gray-500 mt-2">
         Please enter your details.
       </p>
-      <form className="mt-4" onSubmit={handleFormSubmit}>
+      <div className="mt-4">
         <div>
           <label className="text-lg font-medium">Email</label>
           <input
@@ -72,11 +55,14 @@ const SignInForm = () => {
           />
         </div>
         <div className="mt-6 flex flex-col gap-y-4">
-          <button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold">
+          <button
+            className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold"
+            onClick={loginWithEmailAndPassword}
+          >
             SIGN IN
           </button>
         </div>
-      </form>
+      </div>
       <div className="mt-4 flex flex-col">
         <button
           className="flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out"

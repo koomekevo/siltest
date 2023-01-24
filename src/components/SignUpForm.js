@@ -1,57 +1,53 @@
 import React, { useState, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import Account from "../pages/Account.js";
 import {
   auth,
   db,
+  registerWithEmailAndPassword,
   signInWithGoogle,
   sendPasswordReset,
   logout,
 } from "../firebase";
-import ErrorMessage from "./layouts/ErrorMessage.js";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const { currentUser, register, setError } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    if (currentUser) {
+    if (loading) return;
+    if (user) {
       navigate("/Account");
     }
-  }, [currentUser, navigate]);
+  }, [user, loading]);
 
-  async function handleFormSubmit(e) {
-    e.preventDefault();
-
-    if (password !== confirmPassword) {
-      return setError("Passwords do not match!");
-    }
-
-    try {
-      setError();
-      setLoading(true);
-      await register(email, password);
-      navigate("/Account");
-    } catch (e) {
-      setError("Failed to register");
-    }
-
-    setLoading(false);
-  }
+  const register = () => {
+    registerWithEmailAndPassword(name, email, password);
+  };
 
   return (
     <div className="bg-white px-5 py-10 rounded-3xl border-2 border-gray-100">
-      <ErrorMessage />
       <h1 className="text-3xl font-semibold">Sign Up</h1>
       <p className="font-medium text-lg text-gray-500 mt-2">
         Please enter your details.
       </p>
-      <form className="mt-4" onSubmit={handleFormSubmit}>
+      <div className="mt-4">
+        <div>
+          <label className="text-lg font-medium">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
+            placeholder="Enter your Name"
+            required
+          />
+        </div>
         <div>
           <label className="text-lg font-medium">Email</label>
           <input
@@ -76,27 +72,16 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label className="text-lg font-medium">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent"
-            placeholder="Enter your Password"
-            required
-          />
-        </div>
         <div className="mt-8 flex flex-col gap-y-4">
           <button
             className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold"
             disabled={loading}
+            onClick={register}
           >
             SIGN UP
           </button>
         </div>
-      </form>
+      </div>
       <div className="mt-4 flex flex-col">
         <button
           className="flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out"
