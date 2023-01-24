@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useGoogleLogin } from '@react-oauth/google'
-import jwt_decode from "jwt-decode"; // eslint-disable-line
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import Account from './Account.js'
@@ -36,14 +34,6 @@ const SignUpForm = () => {
 
     setLoading(false)
   }
-
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      console.log(tokenResponse)
-      const decoded = jwt_decode(tokenResponse)
-      console.log(decoded)
-    }
-  })
 
   return (
     <div className='bg-white px-5 py-10 rounded-3xl border-2 border-gray-100'>
@@ -91,7 +81,6 @@ const SignUpForm = () => {
           </button>
           <button
             className='flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out'
-            onClick={() => login()}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'

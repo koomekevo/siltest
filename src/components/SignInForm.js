@@ -1,16 +1,25 @@
-import React from 'react'
-import { useGoogleLogin } from '@react-oauth/google'
-import jwt_decode from 'jwt-decode' // eslint-disable-line
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignInForm = () => {
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      console.log(tokenResponse)
-      const decoded = jwt_decode(tokenResponse)
-      console.log(decoded)
+  const navigate = useNavigate();
+  const { currentUser, login } = useAuth();
+  const [loading, setLoading] = useState(false);
+
+
+  async function handleFormSubmit (e) {
+    e.preventDefault()
+
+    try {
+      setLoading(true)
+      await login(email, password)
+      navigate('/account')
+    } catch (e) {
+      alert('Failed to register')
     }
-  })
+
+    setLoading(false)
+  }
 
   return (
     <div className='bg-white px-5 py-10 rounded-3xl border-2 border-gray-100'>
@@ -44,7 +53,6 @@ const SignInForm = () => {
           </button>
           <button
             className='flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out'
-            onClick={() => login()}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
