@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const SignInForm = () => {
   const navigate = useNavigate();
   const { currentUser, login } = useAuth();
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if(currentUser) {
+      navigate('/Account');
+    }
+  }, [currentUser, navigate])
 
   async function handleFormSubmit (e) {
     e.preventDefault()
@@ -15,7 +21,7 @@ const SignInForm = () => {
       await login(email, password)
       navigate('/account')
     } catch (e) {
-      alert('Failed to register')
+      alert('Failed to Sign In')
     }
 
     setLoading(false)

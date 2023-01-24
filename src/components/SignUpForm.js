@@ -27,7 +27,7 @@ const SignUpForm = () => {
     try {
       setLoading(true)
       await register(email, password)
-      navigate('/account')
+      navigate('/Account')
     } catch (e) {
       alert('Failed to register')
     }
@@ -51,6 +51,7 @@ const SignUpForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
             placeholder='Enter your Email'
+            required
           />
         </div>
         <div>
@@ -62,6 +63,7 @@ const SignUpForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
             placeholder='Enter your Password'
+            required
           />
         </div>
         <div>
@@ -70,9 +72,10 @@ const SignUpForm = () => {
             id='confirmPassword'
             name='confirmPassword'
             type='password'
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className='w-full border-2 border-gray-100 rounded-xl p-1 mt-1 bg-transparent'
             placeholder='Enter your Password'
+            required
           />
         </div>
         <div className='mt-8 flex flex-col gap-y-4'>
