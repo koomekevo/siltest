@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Account from "../pages/Account.js";
+import {
+  auth,
+  db,
+  signInWithGoogle,
+  sendPasswordReset,
+  logout,
+} from "../firebase";
 import ErrorMessage from "./layouts/ErrorMessage.js";
 
 const SignUpForm = () => {
@@ -89,7 +96,10 @@ const SignUpForm = () => {
         </div>
       </form>
       <div className="mt-4 flex flex-col">
-        <button className="flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out">
+        <button
+          className="flex border-2 border-gray-100 rounded-xl items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out"
+          onClick={signInWithGoogle}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
