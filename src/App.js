@@ -5,14 +5,14 @@ import SignIn from './components/SignIn'
 import About from './components/About'
 import SignUp from './components/SignUp'
 import Account from './components/Account'
-import { AuthContextProvider } from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext'
 
 function App () {
   return (
     <Router>
       <div>
         <div>
-          <AuthContextProvider>
+          <AuthProvider>
             <Routes>
               <Route exact path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
@@ -20,7 +20,7 @@ function App () {
               <Route path='/signup' element={<SignUp />} />
               <Route path='/account' element={<Account />} />
             </Routes>
-          </AuthContextProvider>
+          </AuthProvider>
         </div>
       </div>
     </Router>
