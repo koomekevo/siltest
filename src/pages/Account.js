@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderSignedIn from './HeaderSignedIn'
+import HeaderSignedIn from '../components/HeaderSignedIn'
 
 const Account = () => {
   return (

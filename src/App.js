@@ -1,10 +1,10 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import SignIn from './components/SignIn'
-import About from './components/About'
-import SignUp from './components/SignUp'
-import Account from './components/Account'
+import Home from './pages/Home'
+import SignIn from './pages/SignIn'
+import About from './pages/About'
+import SignUp from './pages/SignUp'
+import Account from './pages/Account'
 import { AuthProvider } from './context/AuthContext'
 
 function App () {

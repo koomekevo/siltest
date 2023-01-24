@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './Header'
-import SignUpForm from './SignUpForm'
+import Header from '../components/Header'
+import SignUpForm from '../components/SignUpForm'
 
 const SignUp = () => {
   return (

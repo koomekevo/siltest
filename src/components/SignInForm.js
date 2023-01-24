@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 const SignInForm = () => {
-  const navigate = useNavigate();
-  const { currentUser, login } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
+  const { currentUser, login } = useAuth()
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if(currentUser) {
-      navigate('/Account');
+    if (currentUser) {
+      navigate('/Account')
     }
   }, [currentUser, navigate])
 

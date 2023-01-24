@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import Account from './Account.js'
+import Account from '../pages/Account.js'
 
 const SignUpForm = () => {
   const navigate = useNavigate()
