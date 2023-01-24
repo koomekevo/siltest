@@ -8,7 +8,7 @@ const ErrorMessage = () => {
   return (
     error && (
       <div className="flex justify-center">
-        <div className="rounded-md max-w-md w-full bg-red-50 p-4 mt-4">
+        <div className="rounded-md max-w-md w-full bg-red-50 p-1 mt-1">
           <div className="flex">
             <div className="flex-shrink-0">
               <XCircleIcon
