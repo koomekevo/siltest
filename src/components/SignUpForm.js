@@ -77,6 +77,7 @@ const SignUpForm = () => {
         </div>
         <div className='mt-8 flex flex-col gap-y-4'>
           <button
+            type="submit"
             className='active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out rounded-xl bg-blue-900 text-white text-lg font-bold'
             disabled={loading}
             onClick={register}
