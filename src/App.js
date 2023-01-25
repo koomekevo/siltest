@@ -6,6 +6,8 @@ import About from './pages/About'
 import SignUp from './pages/SignUp'
 import Users from './pages/Users'
 import Reset from './pages/Reset'
+import Profile from './pages/Profile'
+import Albums from './pages/Albums'
 
 function App () {
   return (
@@ -17,6 +19,8 @@ function App () {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/users' element={<Users />} />
         <Route path='/reset' element={<Reset />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/albums' element={<Albums />} />
       </Routes>
     </Router>
   )
