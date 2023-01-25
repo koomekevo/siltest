@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import HeaderSignedIn from '../components/HeaderSignedIn'
 import axios from 'axios'
 
-const Albums = () => {
-  const [albums, setAlbums] = useState([])
+const Photos = () => {
+  const [photos, setPhotos] = useState([])
 
   useEffect(() => {
     axios
-      .get('https://jsonplaceholder.typicode.com/albums')
+      .get('https://jsonplaceholder.typicode.com/photos')
       .then((res) => {
         console.log(res.data)
-        setAlbums(res.data)
+        setPhotos(res.data)
       })
       .catch((err) => console.log(err))
   }, [])
@@ -23,17 +23,17 @@ const Albums = () => {
           <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr>
               <th scope='col' className='px-6 py-3'>Album ID</th>
-              <th scope='col' className='px-6 py-3'>User ID</th>
-              <th scope='col' className='px-6 py-3'>Album Title</th>
+              <th scope='col' className='px-6 py-3'>Photo Title</th>
+              <th scope='col' className='px-6 py-3'>Image URL</th>
             </tr>
           </thead>
           <tbody>
-            {albums.map((data) => {
+            {photos.map((data) => {
               return (
                 <tr key={data.id} class='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
-                  <td className='px-6 py-4'>{data.id}</td>
-                  <td className='px-6 py-4'>{data.userId}</td>
+                  <td className='px-6 py-4'>{data.albumId}</td>
                   <td className='px-6 py-4'>{data.title}</td>
+                  <td className='px-6 py-4'>{data.url}</td>
                 </tr>
               )
             })}
@@ -44,4 +44,4 @@ const Albums = () => {
   )
 }
 
-export default Albums
+export default Photos
