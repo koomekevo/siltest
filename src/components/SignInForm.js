@@ -88,9 +88,9 @@ const SignInForm = () => {
         </button>
       </div>
       <div className='mt-4 flex justify-center items-center'>
-        <button className='font-small text-violet text-sm'>
+        <Link to='/Reset' className='font-small text-violet text-sm' exact>
           Forgot Password
-        </button>
+        </Link>
       </div>
       <div className='mt-8 flex justify-center items-center'>
         <p className='font-medium text-base'>

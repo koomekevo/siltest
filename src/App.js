@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn'
 import About from './pages/About'
 import SignUp from './pages/SignUp'
 import Account from './pages/Account'
+import Reset from './pages/Reset'
 
 function App () {
   return (
@@ -15,6 +16,7 @@ function App () {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/reset' element={<Reset />} />
       </Routes>
     </Router>
   )
