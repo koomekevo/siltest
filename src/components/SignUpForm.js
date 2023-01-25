@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom'
-import Account from '../pages/Account.js'
+import Users from '../pages/Users.js'
 import {
   auth,
   registerWithEmailAndPassword,
@@ -21,7 +21,7 @@ const SignUpForm = () => {
   useEffect(() => {
     if (loading) return
     if (user) {
-      navigate('/Account')
+      navigate('/Users')
     }
   }, [user, loading])
 

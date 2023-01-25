@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import About from './pages/About'
 import SignUp from './pages/SignUp'
-import Account from './pages/Account'
+import Users from './pages/Users'
 import Reset from './pages/Reset'
 
 function App () {
@@ -15,7 +15,7 @@ function App () {
         <Route path='/about' element={<About />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/account' element={<Account />} />
+        <Route path='/users' element={<Users />} />
         <Route path='/reset' element={<Reset />} />
       </Routes>
     </Router>

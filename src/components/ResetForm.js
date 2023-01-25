@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Account from "../pages/Account";
+import Users from "../pages/Users";
 import { auth, db, sendPasswordReset } from "../firebase";
 
 const ResetForm = () => {
@@ -13,7 +13,7 @@ const ResetForm = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/Account");
+      navigate("/Users");
     }
   }, [user, loading]);
 

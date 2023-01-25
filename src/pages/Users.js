@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderSignedIn from '../components/HeaderSignedIn'
 
-const Account = () => {
+const Users = () => {
   return (
     <div>
       <HeaderSignedIn />
@@ -9,4 +9,4 @@ const Account = () => {
   )
 }
 
-export default Account
+export default Users
