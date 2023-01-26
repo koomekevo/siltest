@@ -8,6 +8,7 @@ import Users from './pages/Users'
 import Reset from './pages/Reset'
 import Photos from './pages/Photos'
 import Albums from './pages/Albums'
+import UserAlbums from './pages/UserAlbums'
 
 function App () {
   return (
@@ -21,6 +22,7 @@ function App () {
         <Route path='/reset' element={<Reset />} />
         <Route path='/photos' element={<Photos />} />
         <Route path='/albums' element={<Albums />} />
+        <Route path='/useralbums' element={<UserAlbums />} />
       </Routes>
     </Router>
   )
