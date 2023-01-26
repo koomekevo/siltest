@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import HeaderSignedIn from "../components/HeaderSignedIn";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import HeaderSignedIn from '../components/HeaderSignedIn'
+import axios from 'axios'
 
 const UserAlbums = () => {
-  const [users, setUsers] = useState([]);
-  const [albums, setAlbums] = useState([]);
+  const [users, setUsers] = useState([])
+  const [albums, setAlbums] = useState([])
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
-        setUsers(response.data);
+        setUsers(response.data)
       })
       .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+        console.error(error)
+      })
+  }, [])
 
   /* eslint-disable */
   useEffect(() => {
@@ -37,11 +37,11 @@ const UserAlbums = () => {
   return (
     <div>
       <HeaderSignedIn />
-      <div className="flex justify-center items-center relative overflow-x-auto">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className='flex justify-center items-center relative overflow-x-auto'>
+        <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+          <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope='col' className='px-6 py-3'>
                 Albums
               </th>
             </tr>
@@ -51,17 +51,17 @@ const UserAlbums = () => {
               return (
                 <tr
                   key={album.id}
-                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  class='bg-white border-b dark:bg-gray-800 dark:border-gray-700'
                 >
-                  <td className="px-6 py-4">{album.title}</td>
+                  <td className='px-6 py-4'>{album.title}</td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </table>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UserAlbums;
+export default UserAlbums
