@@ -1,9 +1,13 @@
 # SILTest
 
 This repository is a test project required by Savannah Informatics Ltd.
+
 ## Built With
 
-- React
+- React.js
+- Tailwind CSS
+- Firebase
+- Firestore
 
 ## Live Demo
 
@@ -20,6 +24,7 @@ Run `cd siltest` to access app.
 Run `npm install` to install dependencies.
 
 Run `npm start` to start the React App.
+
 ## Authors
 
 👤 **Kevin Koome**
@@ -40,4 +45,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://www.mit.edu/~amini/LICENSE.md) licensed.

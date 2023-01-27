@@ -52,6 +52,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
     "postcss": "^8.4.21",
+    "react-test-renderer": "^18.2.0",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
