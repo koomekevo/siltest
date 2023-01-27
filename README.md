@@ -11,7 +11,7 @@ This repository is a test project required by Savannah Informatics Ltd.
 
 ## Live Demo
 
-https://siltest.vercel.app/
+[SILTest](https://siltest.vercel.app)
 
 ## Getting Started
 
