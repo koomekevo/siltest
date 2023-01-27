@@ -4,7 +4,7 @@ This repository is a test project required by Savannah Informatics Ltd.
 
 ## Built With
 
-- React.js
+- React
 - Tailwind CSS
 - Firebase
 - Firestore
