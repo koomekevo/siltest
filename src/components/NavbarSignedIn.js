@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { logout } from '../firebase'
-import Logo from '../images/logo.png'
+import logo from '../images/logo.png'
 
 const NavbarSignedIn = () => {
   return (
     <nav class='bg-white opacity-80 border-black border-b-2 px-2 sm:px-4 py-2.5 dark:bg-gray-900'>
       <div class='container flex flex-wrap items-center justify-between mx-auto'>
         <a href='/' class='flex items-center'>
-          <img src={Logo} class='h-6 mr-3 sm:h-9' alt='SILTest Logo' />
+          <img src={logo} class='h-6 mr-3 sm:h-9' alt='SILTest Logo' />
           <span class='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
             SILTest
           </span>
