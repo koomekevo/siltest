@@ -2,16 +2,16 @@
 import TestRenderer from "react-test-renderer";
 import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Home from "../pages/Home";
 import React from "react";
 
-describe("Renders the Navbar", () => {
-  it("Renders the Navbar", () => {
-    const navbar = TestRenderer.create(
+describe("Renders the Home Page", () => {
+  it("Renders the Home Page", () => {
+    const home = TestRenderer.create(
       <Router>
-        <Navbar />
+        <Home />
       </Router>
     ).toJSON();
-    expect(navbar).toMatchSnapshot();
+    expect(home).toMatchSnapshot();
   });
 });

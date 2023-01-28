@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render the Navbar Renders the Navbar 1`] = `
+exports[`Renders the Navbar Renders the Navbar 1`] = `
 <nav
   className="bg-white opacity-80 border-black border-b-2 px-2 sm:px-4 py-2.5 dark:bg-gray-900"
 >
